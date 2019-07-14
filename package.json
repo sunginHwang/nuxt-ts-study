@@ -1,0 +1,25 @@
+{
+  "name": "nuxt-ts-study",
+  "version": "1.0.0",
+  "description": "My remarkable Nuxt.js project",
+  "author": "sunginHwang",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "ts-node": "^8.3.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript": "^2.8.1",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "nodemon": "^1.18.9",
+    "nuxt-property-decorator": "^2.3.0"
+  }
+}
