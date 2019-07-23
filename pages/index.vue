@@ -1,21 +1,25 @@
 <template>
- <div>
-   <base-fab-button :content="`this is content`"/>
- </div>
+    <div>
+        <p>fetch data</p>
+    </div>
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'nuxt-property-decorator';
-  import BaseFabButton from '~/components/base-fab-button';
+    import {Vue} from 'nuxt-property-decorator';
+    import {Action} from 'vuex-class';
 
 
-  @Component({
-    components:{
-      BaseFabButton
+    const namespace: string = 'jsonPlaceHolder';
+
+
+    export default class IndexPage extends Vue {
+        @Action('getJsonPlaceHolder', {namespace}) getJsonPlaceHolder: any;
+
+        mounted() {
+            console.log('mounted');
+            this.getJsonPlaceHolder(1);
+        }
+
     }
-  })
-  export default class IndexPage extends Vue {
-    name: string = 'hello-nuxt-ts-decorator'
-  }
 </script>
 
