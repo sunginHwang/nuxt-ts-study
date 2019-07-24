@@ -1,13 +1,12 @@
 import PlaceHolder from '../models/PlaceHolder';
 import {Commit} from 'vuex'
-import axios from 'axios';
+import {fetchJsonPlaceHolder} from '../core/api/jsonPlaceHolderApi';
 
 const mutationTypes = {
     GET_JSON_PLACE_HOLDER: 'GET_JSON_PLACE_HOLDER'
 }
 
 const jsonUrl: string = 'https://jsonplaceholder.typicode.com/todos';
-
 
 // state type
 interface stateType {
@@ -35,8 +34,7 @@ export const mutations = {
 
 export const actions = {
     async getJsonPlaceHolder(context: { commit: Commit, state: stateType }, id: number) {
-        console.log(await axios.get(`${jsonUrl}/1`))
-        const res: PlaceHolder = await axios.get(`${jsonUrl}/${id}`);
-        context.commit(mutationTypes.GET_JSON_PLACE_HOLDER, res);
+        const placeHolder: PlaceHolder = await fetchJsonPlaceHolder(id);
+        context.commit(mutationTypes.GET_JSON_PLACE_HOLDER, placeHolder);
     },
 };
