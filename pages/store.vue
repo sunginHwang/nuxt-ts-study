@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>fetch data</p>
+        <p>store fetch data</p>
     </div>
 </template>
 
@@ -13,11 +13,10 @@
     const namespace: string = 'jsonPlaceHolder';
 
     @Component
-    export default class index extends Vue {
+    export default class store extends Vue {
         @Action('getJsonPlaceHolder', {namespace}) getJsonPlaceHolder: any;
 
         mounted() {
-            console.log('mounted');
             this.getJsonPlaceHolder(1);
         }
 
