@@ -1,5 +1,6 @@
 # nuxt-ts-study
 
+타입스크립트에 미들웨어와 데코레이터 적용 목표
 > My remarkable Nuxt.js project
 
 ## Build Setup
