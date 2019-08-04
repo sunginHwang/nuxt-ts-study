@@ -4,7 +4,7 @@ import asyncMutation from '../../models/asyncMutation';
 const asyncCommit = async (moduleName: string, asyncMutationType : asyncMutation, asyncFunc: any) => {
     const s = store();
 
-    const existPendingMutation = s._mutations[`${moduleName}/${asyncMutationType.PENDING}`] !== undefined;
+    const existPendingMutation: boolean = s._mutations[`${moduleName}/${asyncMutationType.PENDING}`] !== undefined;
 
     if (existPendingMutation) {
         s.commit(`${moduleName}/${asyncMutationType.PENDING}`);
