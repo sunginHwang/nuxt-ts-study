@@ -1,5 +1,6 @@
 import camelCase from 'lodash/camelCase';
 
+// @ts-ignore
 const requireModule: any = require.context('.', true, /^(?!.\/index).*.js$/);
 
 const modules: object = {};

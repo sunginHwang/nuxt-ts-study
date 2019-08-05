@@ -14,11 +14,11 @@
 
     @Component
     export default class index extends Vue {
-        @Action('getJsonPlaceHolder', {namespace}) getJsonPlaceHolder: any;
+        @Action('getAsyncPlaceHolder', {namespace}) getAsyncPlaceHolder: any;
 
         mounted() {
             console.log('mounted');
-            this.getJsonPlaceHolder(1);
+            this.getAsyncPlaceHolder(1);
         }
 
     }
