@@ -17,7 +17,7 @@
         @Action('getAsyncPlaceHolder', {namespace}) getAsyncPlaceHolder: any;
 
         mounted() {
-            console.log('mounted');
+            console.log(this.$store);
             this.getAsyncPlaceHolder(1);
         }
 
