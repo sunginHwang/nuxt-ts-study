@@ -2,8 +2,7 @@ import store from '../../store';
 import asyncMutation from '../../models/asyncMutation';
 
 const asyncCommit = async (moduleName: string, asyncMutationType : asyncMutation, asyncFunc: any) => {
-    const s = store();
-
+    const s: any = store();
     const existPendingMutation: boolean = s._mutations[`${moduleName}/${asyncMutationType.PENDING}`] !== undefined;
 
     if (existPendingMutation) {

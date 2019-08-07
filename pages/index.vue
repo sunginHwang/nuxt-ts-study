@@ -7,17 +7,15 @@
 <script lang="ts">
     import {Vue} from 'nuxt-property-decorator';
     import Component from 'vue-class-component'
+    import {moduleNames} from '~/store/mutationType';
     import {Action} from 'vuex-class';
 
 
-    const namespace: string = 'jsonPlaceHolder';
-
     @Component
     export default class index extends Vue {
-        @Action('getAsyncPlaceHolder', {namespace}) getAsyncPlaceHolder: any;
+        @Action('getAsyncPlaceHolder', {namespace: moduleNames.jsonPlaceHolder}) getAsyncPlaceHolder: any;
 
         mounted() {
-            console.log(this.$store);
             this.getAsyncPlaceHolder(1);
         }
 
